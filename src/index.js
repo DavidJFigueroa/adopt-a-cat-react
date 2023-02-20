@@ -1,44 +1,49 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './style.css';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./style.css";
 
 const animalsToAdopt = [
   {
-      name: "Lucky",
-      picture: "https://placekitten.com/200/287",
+    name: "Lucky",
+    picture: "https://placekitten.com/200/287",
   },
   {
-      name: "Symba",
-      picture: "https://placekitten.com/200/139",
+    name: "Symba",
+    picture: "https://placekitten.com/200/139",
   },
   {
-      name: "Léo",
-      picture: "https://placekitten.com/200/90",
+    name: "Léo",
+    picture: "https://placekitten.com/200/90",
   },
   {
-      name: "Milo",
-      picture: "https://placekitten.com/200/194",
+    name: "Milo",
+    picture: "https://placekitten.com/200/194",
   },
   {
-      name: "Charly",
-      picture: "https://placekitten.com/200/179",
+    name: "Charly",
+    picture: "https://placekitten.com/200/179",
   },
 ];
 
 const Card = (props) => {
-
   return (
     <div className="card">
-        <h4>{ props.name }</h4>
-        <img src="" alt=""></img>
+      <h4>{props.name}</h4>
+      <img src={props.picture} alt={props.name}></img>
     </div>
   );
-}
+};
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 
 function animalsToReactComponents() {
-
+  return (
+    <div class="container">
+      {animalsToAdopt.map((animalsToAdopt, index) => (
+        <Card name={animalsToAdopt.name} picture={animalsToAdopt.picture} />
+      ))}
+    </div>
+  );
 }
 
 root.render(
@@ -49,5 +54,6 @@ root.render(
   //   <Card name={ animalsToAdopt[3].name } />,
   //   <Card name={ animalsToAdopt[4].name } />,
   // ]
-  animalsToAdopt.map( animalsToReactComponents )
+  // animalsToAdopt.map(animalsToReactComponents)
+  animalsToReactComponents()
 );
