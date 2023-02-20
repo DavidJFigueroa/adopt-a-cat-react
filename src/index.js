@@ -39,7 +39,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 function animalsToReactComponents() {
   return (
     <div class="container">
-      {animalsToAdopt.map((animalsToAdopt, index) => (
+      {animalsToAdopt.map((animalsToAdopt) => (
         <Card name={animalsToAdopt.name} picture={animalsToAdopt.picture} />
       ))}
     </div>
